@@ -83,3 +83,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 3. Start an new Angular project:<br/>
    run `ng new <reposetory/project-name>` in the Terminal<br/>
    _The CLI tool will ask you about adding routes (at this point, the answer is Yes) and what type of stylesheets you want to use (SCSS is a good choice)._
+
+4. Material Design is a popular visual language that Google developed back in 2014. It uses classic principles of good design to build systems that allow for a unified experience across different environments.<br/>
+   A version of Material Design, called Angular Material, is used as a UI component library in Angular. It offers a number of components that are a good fit for this app. <br/>
+   To get started with Angular Material, you’ll need to install it as a project dependency using your Angular CLI:<br/>
+   run `ng add @angular/material` in the Terminal and follow this steps:<br/>
+
+   - First, choose "Custom" to select a custom theme, then type "Yes" and hit Enter to set up Angular typography styles and browser animations for Angular Material
+   - Next, add the modules from the Material components you'll be using in your project. In order to use the Material modules in your component, it needs to be registered in the app.module.ts file - Next, you need to add these modules in the imports array of your main module
+
+5. Use @angular/cli to create new components:<br/>
+   run `ng generate component <component-name>` in the Terminal
+
+6.
