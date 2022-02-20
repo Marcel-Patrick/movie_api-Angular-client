@@ -54,31 +54,32 @@ export class FetchApiDataService {
   }
 
   // Get Genre from API
-  public getGenre(name: any): Observable<any> {
+  public getGenre(Genre: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + '/genres/' + name, {
+      .get(apiUrl + '/genres/' + Genre, {
         headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Get Director from API
-  public getDirector(directorName: any): Observable<any> {
+  public getDirector(Director: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + '/director/' + directorName, {
+      .get(apiUrl + '/director/' + Director, {
         headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Get User by username from API
-  public getUser(username: any): Observable<any> {
+  public getUser(): Observable<any> {
     const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
     return this.http
       .get(apiUrl + '/users/' + username, {
-        headers: new HttpHeaders({ Authrization: 'Bearer ' + token }),
+        headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
