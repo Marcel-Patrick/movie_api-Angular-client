@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 // import Angular Material, a UI component library in Angular
 import { MatInputModule } from '@angular/material/input';
@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // import routing
 import { RouterModule, Routes } from '@angular/router';
@@ -29,7 +30,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { GenreComponent } from './genre/genre.component';
 import { DirectorComponent } from './director/director.component';
 import { DescriptionComponent } from './description/description.component';
-import { NavBarComponent } from './banner/nav-bar/nav-bar.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -69,20 +70,10 @@ const appRoutes: Routes = [
     MatIconModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  @Input() username = '';
-
-  @ViewChild(UserLoginFormComponent) child: any;
-
-  constructor() {}
-
-  ngAfterViewInit() {
-    this.username = this.child.userData.username;
-    console.log('userapp', this.username);
-  }
-}
+export class AppModule {}
