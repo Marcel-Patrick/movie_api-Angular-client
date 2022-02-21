@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // import routing
 import { RouterModule, Routes } from '@angular/router';
@@ -71,6 +72,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    FlexLayoutModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
