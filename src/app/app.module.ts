@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 // import Angular Material, a UI component library in Angular
 import { MatInputModule } from '@angular/material/input';
@@ -76,15 +76,4 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  @Input() username = '';
-
-  @ViewChild(UserLoginFormComponent) child: any;
-
-  constructor() {}
-
-  ngAfterViewInit() {
-    this.username = this.child.userData.username;
-    console.log('userapp', this.username);
-  }
-}
+export class AppModule {}
