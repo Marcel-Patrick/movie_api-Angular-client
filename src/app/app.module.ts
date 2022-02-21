@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // import routing
 import { RouterModule, Routes } from '@angular/router';
@@ -29,7 +30,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { GenreComponent } from './genre/genre.component';
 import { DirectorComponent } from './director/director.component';
 import { DescriptionComponent } from './description/description.component';
-import { NavBarComponent } from './banner/nav-bar/nav-bar.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -69,6 +70,7 @@ const appRoutes: Routes = [
     MatIconModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
