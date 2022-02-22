@@ -8,6 +8,8 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 // This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { formatDate } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteUserComponent } from '../delete-user/delete-user.component';
 
 @Component({
   selector: 'app-profile',
@@ -19,11 +21,16 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.getUser();
+  }
+
+  openDialog() {
+    this.dialog.open(DeleteUserComponent);
   }
 
   getUser(): void {
