@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
-<form>
+<form class="profileStyle">
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>update Username</mat-label>
@@ -45,5 +45,15 @@
       />
     </mat-form-field>
   </p>
-  <button mat-raised-button (click)="updateUser()">Update Profile</button>
+  <button
+    mat-raised-button
+    color="primary"
+    style="margin-right: 10px"
+    (click)="updateUser()"
+  >
+    <mat-icon>update</mat-icon> Update Profile
+  </button>
+  <button mat-raised-button color="warn" (click)="updateUser()">
+    <mat-icon>delete_forever</mat-icon> Delete Profile
+  </button>
 </form>
