@@ -1,8 +1,23 @@
-.cardGrid {
-  padding: 16px;
+mat-toolbar {
+  justify-content: space-between;
 }
 
-// img {
-//   height: 400px;
-//   width: auto;
-// }
+.content {
+  padding: 16px;
+}
+.mat-card-title {
+  font-size: 18px;
+  height: 55px;
+}
+.content > mat-card {
+  margin-bottom: 16px;
+  justify-content: center;
+}
+.mat-card-image {
+  height: 500px;
+}
+
+.column-label {
+  margin-right: 8px;
+  font-size: 1rem;
+}
