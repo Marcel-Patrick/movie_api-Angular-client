@@ -1,3 +1,9 @@
+/**
+ * The Genre component displays data about a genre and is implemented
+ * when clicking on the "Genre" button on a movie card.
+ *
+ * @module GenreComponent
+ */
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -7,9 +13,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./genre.component.scss'],
 })
 export class GenreComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    console.log(data);
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {}
 }

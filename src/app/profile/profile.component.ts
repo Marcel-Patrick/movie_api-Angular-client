@@ -1,3 +1,10 @@
+/**
+ * Renders a form for users to update their account information and
+ * an array of movie cards corresponding to their favorite movies.
+ * Also renders a Nav-BarComponent.
+ *
+ * @module ProfileComponent
+ */
 import { Component, OnInit, Input } from '@angular/core';
 
 // You'll use this import to close the dialog on success
@@ -20,6 +27,10 @@ import { DeleteUserComponent } from '../delete-user/delete-user.component';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
+  /**
+   * Starts the value of each form field as an empty string. When the user types
+   * into the field, the updatedUserData is updated as well.
+   */
   @Input() userData = {
     Username: '',
     Password: '',
@@ -33,14 +44,34 @@ export class ProfileComponent implements OnInit {
     public snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {}
+
+  /**
+   * Stores data about each movie in the database.
+   */
   movies: any[] = [];
+
+  /**
+   * A subset of movies containing only the user's favorites.
+   */
   userFavouritesMovies: any[] = [];
 
+  /**
+   * Fetches data for the logged in user.
+   * Then, downloads all the movie data and maps the user's favorites to favoriteMovies.
+   *
+   * If the API call fails for some reason, the user will be logged out and returned to the welcome screen.
+   */
   ngOnInit(): void {
     this.getUser();
     this.getMovies();
   }
 
+  /**
+   * @param id string containing the ID of a movie to be removed from the users favorite movies list.
+   * Removes a movie from a users list of favorites with a DELETE request via
+   * [[FetchApiDataService.removeFavoriteMovie]].
+   * Then, reloads the profile page, resulting in the removed movie disappearing
+   */
   removeFavoriteFromList(movieID: any): void {
     this.fetchApiData.removeFavoriteMovie(movieID).subscribe(
       (response: any) => {
@@ -63,6 +94,10 @@ export class ProfileComponent implements OnInit {
     this.ngOnInit();
   }
 
+  /**
+   * Downloads all the movie data and saves into this.movies.
+   * Then, filter out the favorites and save into this.favoriteMovies.
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe(
       (resp: any) => {
@@ -76,14 +111,17 @@ export class ProfileComponent implements OnInit {
             }
           );
         }
-        console.log('this.userFavouritesMovies ', this.userFavouritesMovies);
-        console.log('this.movies ', this.movies);
       },
       (error: any) => {
         console.error(error);
       }
     );
   }
+
+  /**
+   * @param movie {Title: <string>, Summary: <string>, ... }
+   * Opens a dialog box with a DescriptionComponent, passing the movie data into the component.
+   */
   openDescriptionDialog(movie: any): void {
     this.dialog.open(DescriptionComponent, {
       width: '280px',
@@ -91,6 +129,10 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * @param Genre {Name: <string>, Description: <string>}
+   * Opens a dialog box with a GenreComponent, passing the Genre data into the component.
+   */
   openGenreDialog(Genre: any): void {
     this.dialog.open(GenreComponent, {
       width: '280px',
@@ -98,6 +140,10 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * @param Director {Name: <string>, Bio: <string>, Birth: <string>, Deth: <string>}
+   * Opens a dialog box with a DirectorComponent, passing the Director  data into the component.
+   */
   openDirectorDialog(Director: any): void {
     this.dialog.open(DirectorComponent, {
       width: '280px',
@@ -105,10 +151,27 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * When user clicks on Delete Account Butten, a window.confirm to confirm that the user
+   * wants to delete their account opens up. The user get two buttons to choose
+   * Quit request or confirm to delete the users account.
+   */
   openDialog() {
     this.dialog.open(DeleteUserComponent);
   }
 
+  /**
+   * API call to get data for a user.
+   * Pulls token from localStorage.
+   * @returns object containing data for one user.
+   * {[  _id: <string>,
+   *     Username: <string>,
+   *     Password: <string> (hashed),
+   *     Email: <string>,
+   *     Birthday: <string>
+   *     FavoriteMovies: [<string>]
+   * ]}
+   */
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.userData.Username = resp.Username;
@@ -119,6 +182,11 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Updates the user's data. Only sends data to the server for fields that have been filled in.
+   * If the data is formatted poorly, the error from the server should trigger a warning message
+   * to the user to check their data format.
+   */
   updateUser(): void {
     this.fetchApiData.updateUserData(this.userData).subscribe(
       (response: any) => {
