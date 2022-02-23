@@ -18,16 +18,23 @@ export class DeleteUserComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  deleteUser() {
-    console.log('deleteUser');
+  deleteUser(): void {
     this.router.navigate(['welcome']);
-
-    this.fetchApiData.deleteUser().subscribe;
-    this.snackBar.open('Your Account has been successfully deleted!', 'OK', {
-      duration: 5000,
-    });
+    this.fetchApiData.deleteUser().subscribe(
+      () => {
+        console.log('deleteUser');
+      },
+      // in case of error, the error will be catched below
+      (response) => {
+        this.snackBar.open(
+          'Your Account has been successfully deleted!',
+          'OK',
+          {
+            duration: 5000,
+          }
+        );
+      }
+    );
     localStorage.clear();
-
-    // in case of error, the error will be catched below
   }
 }

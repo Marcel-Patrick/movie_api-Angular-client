@@ -99,10 +99,16 @@ export class FetchApiDataService {
   public addFavoriteMovie(movieID: any): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
+    console.log('token', token);
+
     return this.http
-      .post(apiUrl + '/users/' + username + '/FavoriteMovies/' + movieID, {
-        headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
-      })
+      .post(
+        apiUrl + '/users/' + username + '/FavoriteMovies/' + movieID,
+        null,
+        {
+          headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
+        }
+      )
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
@@ -132,11 +138,12 @@ export class FetchApiDataService {
   public deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
+    console.log('username', username);
     return this.http
       .delete(apiUrl + '/deregistrate/' + username, {
         headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
       })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+      .pipe(catchError(this.handleError));
   }
 
   // Non-typed response extraction
@@ -151,7 +158,10 @@ export class FetchApiDataService {
       console.error('Some error occurred:', error.error.message);
     } else {
       console.error(
-        `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
+        'Error Status code',
+        error.status,
+        'Error body is: ',
+        error.error
       );
     }
     return throwError('Something bad happened; please try again later.');
