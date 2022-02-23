@@ -99,8 +99,6 @@ export class FetchApiDataService {
   public addFavoriteMovie(movieID: any): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
-    console.log('token', token);
-
     return this.http
       .post(
         apiUrl + '/users/' + username + '/FavoriteMovies/' + movieID,
@@ -138,7 +136,6 @@ export class FetchApiDataService {
   public deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
-    console.log('username', username);
     return this.http
       .delete(apiUrl + '/deregistrate/' + username, {
         headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),

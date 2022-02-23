@@ -1,4 +1,27 @@
 .profileStyle {
   text-align: center;
-  transform: translateY(25%);
+}
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.content {
+  margin-top: 20px;
+  padding: 16px;
+}
+.mat-card-title {
+  font-size: 18px;
+  height: 55px;
+}
+.content > mat-card {
+  margin-bottom: 16px;
+  justify-content: center;
+}
+.mat-card-image {
+  height: 500px;
+}
+
+.column-label {
+  margin-right: 8px;
+  font-size: 1rem;
 }
