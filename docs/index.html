@@ -1,0 +1,126 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>movie-api-angular-client</title><meta name="description" content="Documentation for movie-api-angular-client"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">movie-api-angular-client</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1> movie-api-angular-client</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#movieapiangularclient" id="movieapiangularclient" style="color: inherit; text-decoration: none;">
+  <h1>MovieApiAngularClient</h1>
+</a>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 13.2.3.</p>
+<hr>
+
+<a href="#objective" id="objective" style="color: inherit; text-decoration: none;">
+  <h1>Objective:</h1>
+</a>
+<p><strong>Using Angular, build the client-side for an application called MovieFlix based on its existing server-side code (REST API and database, with supporting documentation.</strong></p>
+<hr>
+
+<a href="#design-criteria" id="design-criteria" style="color: inherit; text-decoration: none;">
+  <h1>Design Criteria:</h1>
+</a>
+
+<a href="#user-stories" id="user-stories" style="color: inherit; text-decoration: none;">
+  <h2>User Stories:</h2>
+</a>
+<ul>
+<li>As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in.</li>
+<li>As a user, I want to be able to create a profile so I can save data about my favorite movies.</li>
+</ul>
+
+<a href="#key-features" id="key-features" style="color: inherit; text-decoration: none;">
+  <h2>Key Features:</h2>
+</a>
+<ul>
+<li>Your app should display a welcome view where users will be able to either log in or register an account.</li>
+<li>Once authenticated, the user should now view all movies.</li>
+<li>Upon clicking on a particular movie, users will be taken to a single movie view, where additional movie details will be displayed. The single movie view will contain the following additional features:<br/><ul>
+<li>A button that when clicked takes a user to the director view, where details about the director of that particular movie will be displayed.</li>
+<li>A button that when clicked takes a user to the genre view, where details about that particular genre of the movie will be displayed.</li>
+</ul>
+</li>
+</ul>
+
+<a href="#technical-requirements" id="technical-requirements" style="color: inherit; text-decoration: none;">
+  <h2>Technical Requirements:</h2>
+</a>
+<ul>
+<li>The application must be written in Angular (version 9 or later)</li>
+<li>The application requires the latest version of Node.js and npm package</li>
+<li>The application must contain user registration and login forms</li>
+<li>The application must be designed using Angular Material</li>
+<li>The application&#39;s codebase must contain comments using Typedoc</li>
+<li>The project must contain technical documentation using JSDoc</li>
+<li>The project must be hosted on GitHub Pages</li>
+</ul>
+<hr>
+
+<a href="#setup" id="setup" style="color: inherit; text-decoration: none;">
+  <h1>Setup:</h1>
+</a>
+
+<a href="#development-server" id="development-server" style="color: inherit; text-decoration: none;">
+  <h2>Development server:</h2>
+</a>
+<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
+
+<a href="#code-scaffolding" id="code-scaffolding" style="color: inherit; text-decoration: none;">
+  <h2>Code scaffolding:</h2>
+</a>
+<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
+
+<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+  <h2>Build:</h2>
+</a>
+<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory.</p>
+
+<a href="#running-unit-tests" id="running-unit-tests" style="color: inherit; text-decoration: none;">
+  <h2>Running unit tests:</h2>
+</a>
+<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
+
+<a href="#running-end-to-end-tests" id="running-end-to-end-tests" style="color: inherit; text-decoration: none;">
+  <h2>Running end-to-end tests:</h2>
+</a>
+<p>Run <code>ng e2e</code> to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.</p>
+
+<a href="#further-help" id="further-help" style="color: inherit; text-decoration: none;">
+  <h2>Further help:</h2>
+</a>
+<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+<hr>
+
+<a href="#other-setups-and-installation-requirements" id="other-setups-and-installation-requirements" style="color: inherit; text-decoration: none;">
+  <h1>Other Setups and Installation requirements:</h1>
+</a>
+<ol>
+<li>Check if Angular is installed:<br/>
+run <code>ng --version</code> in the Terminal<br/></li>
+</ol>
+<ul>
+<li><p>If Angular is installed, make sure you have the latest version:<br/>
+run <code>npm install -g @angular/cli@latest</code> in the Terminal<br/></p>
+</li>
+<li><p>If Angular is not installed, install the latest version:<br/>
+run <code>npm install -g @angular/cli</code> in the Terminal<br/>
+<em>Until recently, @angular/cli was known as angular-cli. Keep this in mind when looking at web-based resources as some may be outdated.</em></p>
+</li>
+</ul>
+<ol start="2">
+<li><p>Before starting a new project, make sure Node.js and npm package manager are up to date.<br/>
+run <code>node -v</code> and <code>npm -v</code> in the Terminal to check the installed version.</p>
+</li>
+<li><p>Start an new Angular project:<br/>
+run <code>ng new &lt;reposetory/project-name&gt;</code> in the Terminal<br/>
+<em>The CLI tool will ask you about adding routes (at this point, the answer is Yes) and what type of stylesheets you want to use (SCSS is a good choice).</em></p>
+</li>
+<li><p>Material Design is a popular visual language that Google developed back in 2014. It uses classic principles of good design to build systems that allow for a unified experience across different environments.<br/>
+A version of Material Design, called Angular Material, is used as a UI component library in Angular. It offers a number of components that are a good fit for this app. <br/>
+To get started with Angular Material, you’ll need to install it as a project dependency using your Angular CLI:<br/>
+run <code>ng add @angular/material</code> in the Terminal and follow this steps:<br/></p>
+<ul>
+<li>First, choose &quot;Custom&quot; to select a custom theme, then type &quot;Yes&quot; and hit Enter to set up Angular typography styles and browser animations for Angular Material</li>
+<li>Next, add the modules from the Material components you&#39;ll be using in your project. In order to use the Material modules in your component, it needs to be registered in the app.module.ts file - Next, you need to add these modules in the imports array of your main module</li>
+</ul>
+</li>
+<li><p>Use @angular/cli to create new components:<br/>
+run <code>ng generate component &lt;component-name&gt;</code> in the Terminal</p>
+</li>
+<li></li>
+</ol>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Modules</a></li><li class=" tsd-kind-module"><a href="modules/DeleteUserComponent.html">Delete<wbr/>User<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/DescriptionComponent.html">Description<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/DirectorComponent.html">Director<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/FetchApiDataService.html">Fetch<wbr/>Api<wbr/>Data<wbr/>Service</a></li><li class=" tsd-kind-module"><a href="modules/GenreComponent.html">Genre<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/MovieCardComponent.html">Movie<wbr/>Card<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/NavBarComponent.html">Nav<wbr/>Bar<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/ProfileComponent.html">Profile<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/UserLoginFormComponent.html">User<wbr/>Login<wbr/>Form<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/UserRegistrationFormComponent.html">User<wbr/>Registration<wbr/>Form<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/WelcomePageComponent.html">Welcome<wbr/>Page<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/app_app_component.html">app/app.component</a></li><li class=" tsd-kind-module"><a href="modules/app_app_module.html">app/app.module</a></li><li class=" tsd-kind-module"><a href="modules/app_app_module.html">app/app.module</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
