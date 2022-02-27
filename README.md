@@ -95,4 +95,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 5. Use @angular/cli to create new components:<br/>
    run `ng generate component <component-name>` in the Terminal
 
-6.
+6. Deploying the Application:<br/>
+   At frist you need to add angular-cli-ghpages by running `ng add angular-cli-ghpages`
+
+7. Build your application, to do so, run the following command, replacing <repository-name> with your own repository name:<br/>
+   `ng deploy --base-href=/<repository-name>/`
+
+8. Wait for angular-cli-ghpages to generate the new production code. It will then try to push the code to the gh-pages branch, so it will prompt you to enter your GitHub username and password if you haven't automated the GitHub authentication process before.
+
+---
+
+# App / Livepage:
+
+[Link to Livepage](https://marcel-patrick.github.io/movie_api-Angular-client/welcome)
+
+Livepage after successfully log-in:
+
+![Livepage](./src/assets/img/Screenshot_MovieFlexAngular.png)
